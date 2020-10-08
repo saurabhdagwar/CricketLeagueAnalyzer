@@ -80,6 +80,12 @@ public class IPLAnalyzer {
         String sortedStatedCensusJson = new Gson().toJson(this.iplList);
         return sortedStatedCensusJson;
     }
+    public String getSortOnSRWithWicket() throws CSVBuilderException {
+        Comparator<RunsWicketDAO> censusComparator = Comparator.comparing(census -> census.fourWicket + census.fiveWicket );
+        this.sortIPLData(censusComparator.thenComparing(census -> census.sr));
+        String sortedStatedCensusJson = new Gson().toJson(this.iplList);
+        return sortedStatedCensusJson;
+    }
 
     private void sortIPLData( Comparator<RunsWicketDAO> csvComparator) throws CSVBuilderException {
         if(iplMap == null || iplMap.size() ==0){
@@ -99,5 +105,6 @@ public class IPLAnalyzer {
             }
         }
     }
+
 
 }

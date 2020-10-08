@@ -15,6 +15,8 @@ public class RunsWicketDAO {
     public Double overs;
     public int wickets;
     public Double economy;
+    public int fourWicket;
+    public int fiveWicket;
 
     public RunsWicketDAO(RunsCSV runsCSV){
     player = runsCSV.player;
@@ -31,11 +33,12 @@ public class RunsWicketDAO {
     public RunsWicketDAO(WicketCSV wicketCSV){
         player = wicketCSV.player;
         match = wicketCSV.match;
-        runs = wicketCSV.runs;
         overs = wicketCSV.overs;
         wickets = wicketCSV.wickets;
         sr = wicketCSV.sr;
         average = wicketCSV.average;
         economy = wicketCSV.economy;
+        fourWicket = wicketCSV.fourWicket;
+        fiveWicket = wicketCSV.fiveWicket;
     }
 }

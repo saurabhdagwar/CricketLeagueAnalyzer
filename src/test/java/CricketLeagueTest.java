@@ -114,7 +114,7 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
     }
 
     @Test
-    public void givingIPLRunsCSVFile_WhenSortOnBawlingAverage_ShouldReturnSortedResult() {
+    public void givingIPLWicketsCSVFile_WhenSortOnBawlingAverage_ShouldReturnSortedResult() {
         try {
             IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
             iplAnalyzer.loadIPLWicketsCensusData(MOST_WICKET_CSV);
@@ -126,7 +126,7 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
         }
     }
     @Test
-    public void givingIPLRunsCSVFile_WhenSortOnBowlingStrikingRate_ShouldReturnSortedResult() {
+    public void givingIPLWicketsCSVFile_WhenSortOnBowlingStrikingRate_ShouldReturnSortedResult() {
         try {
             IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
             iplAnalyzer.loadIPLWicketsCensusData(MOST_WICKET_CSV);
@@ -139,7 +139,7 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
     }
 
     @Test
-    public void givingIPLRunsCSVFile_WhenSortOnBowlingEconomyRate_ShouldReturnSortedResult() {
+    public void givingIPLWicketsCSVFile_WhenSortOnBowlingEconomyRate_ShouldReturnSortedResult() {
         try {
             IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
             iplAnalyzer.loadIPLWicketsCensusData(MOST_WICKET_CSV);
@@ -150,5 +150,19 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void givingIPLWicketsCSVFile_WhenSortOnSRWithWickets_ShouldReturnSortedResult() {
+        try {
+            IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
+            iplAnalyzer.loadIPLWicketsCensusData(MOST_WICKET_CSV);
+            String sortedCensusData = iplAnalyzer.getSortOnSRWithWicket();
+            WicketCSV[] wicketCSV = new Gson().fromJson(sortedCensusData, WicketCSV[].class);
+            Assert.assertEquals(  "Lasith Malinga", wicketCSV[0].player);
+        } catch (CSVBuilderException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
