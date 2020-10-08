@@ -1,5 +1,6 @@
 import com.bridgelabz.RunsCSV;
 import com.bridgelabz.RunsWicketDAO;
+import com.bridgelabz.WicketCSV;
 import com.csvbuilder.CSVBuilderException;
 import com.google.gson.Gson;
 import org.junit.Assert;
@@ -16,6 +17,11 @@ public class IPLAnalyzer {
 
     public int loadIPLRunsCensusData(String csvFilePath) throws CSVBuilderException {
         iplMap = new IPLLoader().loadCensusData(RunsCSV.class, csvFilePath);
+        return iplMap.size();
+    }
+
+    public int loadIPLWicketsCensusData(String csvFilePath) throws CSVBuilderException{
+        iplMap = new IPLLoader().loadCensusData(WicketCSV.class, csvFilePath);
         return iplMap.size();
     }
 

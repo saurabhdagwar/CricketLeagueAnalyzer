@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CricketLeagueTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2020-10-08T17:25:09" hostname="DESKTOP-JVE4C36" time="2.148">
+<testsuite name="CricketLeagueTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2020-10-08T18:22:48" hostname="DESKTOP-JVE4C36" time="2.477">
   <properties/>
-  <testcase name="givingIPLRunsCSVFile_WhenSortOnSixesAndFoursSR_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.673"/>
-  <testcase name="givingIPLRunsCSVFile_WhenSortOnSixes_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.308"/>
-  <testcase name="givingIPLRunsCSVFile_WhenSortOnFours_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.226"/>
-  <testcase name="givingIPLRunsCSVFile_WhenSortOnStrikingRate_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.296"/>
-  <testcase name="givingIPLRunsCSVFile_WhenSortOnBattingAverage_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.204"/>
-  <testcase name="givingIPLRunsCSVFile_WhenSortAverageWithSR_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.2"/>
-  <testcase name="givenIPLRunsCensusCSVFile_ReturnsCorrectRecords" classname="CricketLeagueTest" time="0.238"/>
+  <testcase name="givingIPLRunsCSVFile_WhenSortOnBawlingAverage_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.572"/>
+  <testcase name="givingIPLRunsCSVFile_WhenSortOnSixesAndFoursSR_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.289"/>
+  <testcase name="givingIPLRunsCSVFile_WhenSortOnSixes_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.286"/>
+  <testcase name="givingIPLRunsCSVFile_WhenSortOnFours_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.221"/>
+  <testcase name="givingIPLRunsCSVFile_WhenSortOnStrikingRate_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.215"/>
+  <testcase name="givingIPLRunsCSVFile_WhenSortRunsWithAverage_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.202"/>
+  <testcase name="givingIPLRunsCSVFile_WhenSortOnBattingAverage_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.185"/>
+  <testcase name="givingIPLRunsCSVFile_WhenSortAverageWithSR_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.294"/>
+  <testcase name="givenIPLRunsCensusCSVFile_ReturnsCorrectRecords" classname="CricketLeagueTest" time="0.203"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
