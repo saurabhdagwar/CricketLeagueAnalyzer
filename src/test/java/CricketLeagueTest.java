@@ -19,6 +19,7 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
             e.printStackTrace();
         }
     }
+
     @Test
     public void givingIPLRunsCSVFile_WhenSortOnBattingAverage_ShouldReturnSortedResult() {
         try {
@@ -32,6 +33,21 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void givingIPLRunsCSVFile_WhenSortOnStrikingRate_ShouldReturnSortedResult() {
+        try {
+            IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
+            iplAnalyzer.loadIPLRunsCensusData(MOST_RUNS_CSV);
+            String sortedCensusData = iplAnalyzer.getSortedSR();
+            RunsCSV[] runsCSV = new Gson().fromJson(sortedCensusData, RunsCSV[].class);
+            Assert.assertEquals( (Double) 333.33, runsCSV[0].sr);
+        } catch (CSVBuilderException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 
 }

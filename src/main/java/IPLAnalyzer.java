@@ -3,8 +3,6 @@ import com.bridgelabz.RunsWicketDAO;
 import com.csvbuilder.CSVBuilderException;
 import com.google.gson.Gson;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.*;
 
 public class IPLAnalyzer {
@@ -26,13 +24,23 @@ public class IPLAnalyzer {
         }
         iplList.addAll(iplMap.values());
         Comparator<RunsWicketDAO> censusComparator = Comparator.comparing(census -> census.average,Comparator.reverseOrder());
-        this.sortCensusData(censusComparator);
+        this.sortIPLData(censusComparator);
         String sortedStatedCensusJson = new Gson().toJson(this.iplList);
-
         return sortedStatedCensusJson;
     }
 
-    private void sortCensusData( Comparator<RunsWicketDAO> csvComparator) {
+    public String getSortedSR() throws CSVBuilderException {
+        if(iplMap == null || iplMap.size() ==0){
+            throw new CSVBuilderException("No Census Data", CSVBuilderException.ExceptionType.UNABLE_TO_PARSE);
+        }
+        iplList.addAll(iplMap.values());
+        Comparator<RunsWicketDAO> censusComparator = Comparator.comparing(census -> census.sr,Comparator.reverseOrder());
+        this.sortIPLData(censusComparator);
+        String sortedStatedCensusJson = new Gson().toJson(this.iplList);
+        return sortedStatedCensusJson;
+    }
+
+    private void sortIPLData( Comparator<RunsWicketDAO> csvComparator) {
         for (int i=0 ; i<iplList.size()-1;i++)
         {
             for (int j=0 ; j<iplList.size()-i-1;j++){

@@ -13,16 +13,16 @@ public class WicketCSV {
     public int runs;
 
     @CsvBindByName(column = "Ov", required = true )
-    public double overs;
+    public Double overs;
 
     @CsvBindByName(column = "Wkts", required = true )
     public int wickets;
 
     @CsvBindByName(column = "SR", required = true )
-    public double sr;
+    public Double sr;
 
     @CsvBindByName(column = "Avg", required = true )
-    public double average;
+    public Double average;
 
     @Override
     public String toString() {

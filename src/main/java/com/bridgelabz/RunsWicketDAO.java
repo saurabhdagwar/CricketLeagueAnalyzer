@@ -6,13 +6,13 @@ public class RunsWicketDAO {
     public String player;
     public int match;
     public int runs;
-    public double sr;
-    public double average;
+    public Double sr;
+    public Double average;
     public int hundred;
     public int fifty;
     public int fours;
     public int sixes;
-    public double overs;
+    public Double overs;
     public int wickets;
 
     public RunsWicketDAO(RunsCSV runsCSV){

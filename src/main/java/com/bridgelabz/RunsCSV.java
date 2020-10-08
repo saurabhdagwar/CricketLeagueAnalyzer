@@ -14,10 +14,10 @@ public class RunsCSV {
     public int runs;
 
     @CsvBindByName(column = "SR", required = true )
-    public double sr;
+    public Double sr;
 
     @CsvBindByName(column = "Avg", required = true )
-    public double average;
+    public Double average;
 
     @CsvBindByName(column = "100", required = true )
     public int hundred;
