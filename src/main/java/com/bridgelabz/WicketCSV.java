@@ -1,0 +1,42 @@
+package com.bridgelabz;
+
+import com.opencsv.bean.CsvBindByName;
+
+public class WicketCSV {
+    @CsvBindByName(column = "PLAYER", required = true )
+    public String player;
+
+    @CsvBindByName(column = "Mat", required = true )
+    public int match;
+
+    @CsvBindByName(column = "Runs", required = true )
+    public int runs;
+
+    @CsvBindByName(column = "Ov", required = true )
+    public double overs;
+
+    @CsvBindByName(column = "Wkts", required = true )
+    public int wickets;
+
+    @CsvBindByName(column = "SR", required = true )
+    public double sr;
+
+    @CsvBindByName(column = "Avg", required = true )
+    public double average;
+
+    @Override
+    public String toString() {
+        return "IndiaCensusCSV{" +
+                "PLAYER='" + player + '\'' +
+                ", Total runs='" + runs + '\'' +
+                ", Average='" + average + '\'' +
+                ", Match ='" + match + '\'' +
+                ", Overs ='" + overs + '\'' +
+                ", Wickets ='" + wickets + '\'' +
+                ", Striking Rates ='" + sr + '\'' +
+                '}';
+    }
+
+
+
+}
