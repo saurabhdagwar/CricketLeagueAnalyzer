@@ -72,6 +72,21 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
         } catch (CSVBuilderException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void givingIPLRunsCSVFile_WhenSortOnSixesAndFoursSR_ShouldReturnSortedResult() {
+        try {
+            IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
+            iplAnalyzer.loadIPLRunsCensusData(MOST_RUNS_CSV);
+            String hitters = iplAnalyzer.maximumFoursSixesHitter();
+            RunsCSV[] runsCSV = new Gson().fromJson(hitters, RunsCSV[].class);
+            Assert.assertEquals( "Ander Russell", runsCSV[0].player);
+        } catch (CSVBuilderException e) {
+            e.printStackTrace();
+        }
 
     }
+
+
 }

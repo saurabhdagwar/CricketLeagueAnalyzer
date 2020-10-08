@@ -40,7 +40,14 @@ public class IPLAnalyzer {
     }
 
     public String maximumFoursHitter() throws CSVBuilderException{
-        Comparator<RunsWicketDAO> censusComparator = Comparator.comparing(census -> census.fours);
+        Comparator<RunsWicketDAO> censusComparator = Comparator.comparing(census -> census.fours );
+        this.sortIPLData(censusComparator);
+        String sortedStatedCensusJson = new Gson().toJson(this.iplList);
+        return sortedStatedCensusJson;
+    }
+
+    public String maximumFoursSixesHitter() throws CSVBuilderException{
+        Comparator<RunsWicketDAO> censusComparator = Comparator.comparing(census -> census.fours + census.sixes );
         this.sortIPLData(censusComparator);
         String sortedStatedCensusJson = new Gson().toJson(this.iplList);
         return sortedStatedCensusJson;
