@@ -99,4 +99,17 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
         }
     }
 
+    @Test
+    public void givingIPLRunsCSVFile_WhenSortRunsWithAverage_ShouldReturnSortedResult() {
+        try {
+            IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
+            iplAnalyzer.loadIPLRunsCensusData(MOST_RUNS_CSV);
+            String averageWithSR = iplAnalyzer.maxRunsWithAvg();
+            RunsCSV[] runsCSV = new Gson().fromJson(averageWithSR, RunsCSV[].class);
+            Assert.assertEquals( "David Warner", runsCSV[0].player);
+        } catch (CSVBuilderException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

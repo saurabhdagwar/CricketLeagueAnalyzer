@@ -61,6 +61,12 @@ public class IPLAnalyzer {
         return sortedStatedCensusJson;
     }
 
+    public String maxRunsWithAvg() throws CSVBuilderException {
+        Comparator<RunsWicketDAO> censusComparator = Comparator.comparing(census -> census.runs );
+        this.sortIPLData(censusComparator.thenComparing(census -> census.average));
+        String sortedStatedCensusJson = new Gson().toJson(this.iplList);
+        return sortedStatedCensusJson;
+    }
 
     private void sortIPLData( Comparator<RunsWicketDAO> csvComparator) throws CSVBuilderException {
         if(iplMap == null || iplMap.size() ==0){
@@ -80,6 +86,5 @@ public class IPLAnalyzer {
             }
         }
     }
-
 
 }
