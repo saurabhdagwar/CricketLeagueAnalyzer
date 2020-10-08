@@ -55,9 +55,8 @@ public class IPLAnalyzer {
     }
 
     public String maxAverageWithSR() throws CSVBuilderException {
-
-        Comparator<RunsWicketDAO> censusComparator = Comparator.comparing(census -> ((census.average)/334)*100 + ((census.sr)*334)*100 );
-        this.sortIPLData(censusComparator);
+        Comparator<RunsWicketDAO> censusComparator = Comparator.comparing(census -> census.average );
+        this.sortIPLData(censusComparator.thenComparing(census -> census.sr));
         String sortedStatedCensusJson = new Gson().toJson(this.iplList);
         return sortedStatedCensusJson;
     }

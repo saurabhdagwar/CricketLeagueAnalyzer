@@ -53,7 +53,7 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
             iplAnalyzer.loadIPLRunsCensusData(MOST_RUNS_CSV);
             String sixesHitters = iplAnalyzer.maximumSixesHitter();
             RunsCSV[] runsCSV = new Gson().fromJson(sixesHitters, RunsCSV[].class);
-            Assert.assertEquals( "Ander Russell", runsCSV[0].player);
+            Assert.assertEquals( "Andre Russell", runsCSV[0].player);
         } catch (CSVBuilderException e) {
             e.printStackTrace();
         }
@@ -80,7 +80,7 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
             iplAnalyzer.loadIPLRunsCensusData(MOST_RUNS_CSV);
             String hitters = iplAnalyzer.maximumFoursSixesHitter();
             RunsCSV[] runsCSV = new Gson().fromJson(hitters, RunsCSV[].class);
-            Assert.assertEquals( "Ander Russell", runsCSV[0].player);
+            Assert.assertEquals( "Andre Russell", runsCSV[0].player);
         } catch (CSVBuilderException e) {
             e.printStackTrace();
         }
@@ -93,9 +93,10 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
             iplAnalyzer.loadIPLRunsCensusData(MOST_RUNS_CSV);
             String averageWithSR = iplAnalyzer.maxAverageWithSR();
             RunsCSV[] runsCSV = new Gson().fromJson(averageWithSR, RunsCSV[].class);
-            Assert.assertEquals( "Ishant Sharma", runsCSV[0].player);
+            Assert.assertEquals( "MS Dhoni", runsCSV[0].player);
         } catch (CSVBuilderException e) {
             e.printStackTrace();
         }
     }
+
 }

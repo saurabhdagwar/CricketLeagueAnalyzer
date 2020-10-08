@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CricketLeagueTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-08T17:02:49" hostname="DESKTOP-JVE4C36" time="4.117">
+<testsuite name="CricketLeagueTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2020-10-08T17:25:09" hostname="DESKTOP-JVE4C36" time="2.148">
   <properties/>
-  <testcase name="givingIPLRunsCSVFile_WhenSortAverageWithSR_ShouldReturnSortedResult" classname="CricketLeagueTest" time="4.117"/>
+  <testcase name="givingIPLRunsCSVFile_WhenSortOnSixesAndFoursSR_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.673"/>
+  <testcase name="givingIPLRunsCSVFile_WhenSortOnSixes_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.308"/>
+  <testcase name="givingIPLRunsCSVFile_WhenSortOnFours_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.226"/>
+  <testcase name="givingIPLRunsCSVFile_WhenSortOnStrikingRate_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.296"/>
+  <testcase name="givingIPLRunsCSVFile_WhenSortOnBattingAverage_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.204"/>
+  <testcase name="givingIPLRunsCSVFile_WhenSortAverageWithSR_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.2"/>
+  <testcase name="givenIPLRunsCensusCSVFile_ReturnsCorrectRecords" classname="CricketLeagueTest" time="0.238"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
