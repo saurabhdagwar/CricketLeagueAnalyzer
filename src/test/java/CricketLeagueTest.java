@@ -41,7 +41,7 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
             iplAnalyzer.loadIPLRunsCensusData(MOST_RUNS_CSV);
             String sortedCensusData = iplAnalyzer.getSortedSR();
             RunsCSV[] runsCSV = new Gson().fromJson(sortedCensusData, RunsCSV[].class);
-            Assert.assertEquals( (Double) 333.33, runsCSV[0].sr);
+            Assert.assertEquals(  "Ishant Sharma", runsCSV[0].player);
         } catch (CSVBuilderException e) {
             e.printStackTrace();
         }
@@ -125,5 +125,16 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
             e.printStackTrace();
         }
     }
-
+    @Test
+    public void givingIPLRunsCSVFile_WhenSortOnBowlingStrikingRate_ShouldReturnSortedResult() {
+        try {
+            IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
+            iplAnalyzer.loadIPLWicketsCensusData(MOST_WICKET_CSV);
+            String sortedCensusData = iplAnalyzer.getSortedSR();
+            WicketCSV[] wicketCSV = new Gson().fromJson(sortedCensusData, WicketCSV[].class);
+            Assert.assertEquals(  "Krishnappa Gowtham", wicketCSV[0].player);
+        } catch (CSVBuilderException e) {
+            e.printStackTrace();
+        }
+    }
 }
