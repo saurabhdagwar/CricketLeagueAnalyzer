@@ -5,7 +5,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class CricketLeagueTest {
-
 public static final String MOST_RUNS_CSV = "./src/test/resources/IPL2019FactsheetMostRuns.csv";
 public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019FactsheetMostWkts.csv";
 
@@ -85,8 +84,18 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
         } catch (CSVBuilderException e) {
             e.printStackTrace();
         }
-
     }
 
-
+    @Test
+    public void givingIPLRunsCSVFile_WhenSortAverageWithSR_ShouldReturnSortedResult() {
+        try {
+            IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
+            iplAnalyzer.loadIPLRunsCensusData(MOST_RUNS_CSV);
+            String averageWithSR = iplAnalyzer.maxAverageWithSR();
+            RunsCSV[] runsCSV = new Gson().fromJson(averageWithSR, RunsCSV[].class);
+            Assert.assertEquals( "Ishant Sharma", runsCSV[0].player);
+        } catch (CSVBuilderException e) {
+            e.printStackTrace();
+        }
+    }
 }
