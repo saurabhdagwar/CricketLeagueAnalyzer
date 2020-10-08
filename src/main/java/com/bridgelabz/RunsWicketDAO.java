@@ -14,6 +14,7 @@ public class RunsWicketDAO {
     public int sixes;
     public Double overs;
     public int wickets;
+    public Double economy;
 
     public RunsWicketDAO(RunsCSV runsCSV){
     player = runsCSV.player;
@@ -35,6 +36,6 @@ public class RunsWicketDAO {
         wickets = wicketCSV.wickets;
         sr = wicketCSV.sr;
         average = wicketCSV.average;
-
+        economy = wicketCSV.economy;
     }
 }

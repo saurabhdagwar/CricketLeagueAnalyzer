@@ -24,12 +24,16 @@ public class WicketCSV {
     @CsvBindByName(column = "Avg", required = true )
     public Double average;
 
+    @CsvBindByName(column = "Econ", required = true )
+    public Double economy;
+
     @Override
     public String toString() {
         return "IndiaCensusCSV{" +
                 "PLAYER='" + player + '\'' +
                 ", Total runs='" + runs + '\'' +
                 ", Average='" + average + '\'' +
+                ", Economy ='" + economy + '\'' +
                 ", Match ='" + match + '\'' +
                 ", Overs ='" + overs + '\'' +
                 ", Wickets ='" + wickets + '\'' +

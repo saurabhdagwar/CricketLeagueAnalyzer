@@ -74,6 +74,13 @@ public class IPLAnalyzer {
         return sortedStatedCensusJson;
     }
 
+    public String getSortOnEconomy() throws CSVBuilderException {
+        Comparator<RunsWicketDAO> censusComparator = Comparator.comparing(census -> census.economy );
+        this.sortIPLData(censusComparator);
+        String sortedStatedCensusJson = new Gson().toJson(this.iplList);
+        return sortedStatedCensusJson;
+    }
+
     private void sortIPLData( Comparator<RunsWicketDAO> csvComparator) throws CSVBuilderException {
         if(iplMap == null || iplMap.size() ==0){
             throw new CSVBuilderException("No Census Data", CSVBuilderException.ExceptionType.UNABLE_TO_PARSE);

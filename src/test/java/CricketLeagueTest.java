@@ -137,4 +137,18 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void givingIPLRunsCSVFile_WhenSortOnBowlingEconomyRate_ShouldReturnSortedResult() {
+        try {
+            IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
+            iplAnalyzer.loadIPLWicketsCensusData(MOST_WICKET_CSV);
+            String sortedCensusData = iplAnalyzer.getSortOnEconomy();
+            WicketCSV[] wicketCSV = new Gson().fromJson(sortedCensusData, WicketCSV[].class);
+            Assert.assertEquals(  "Ben Cutting", wicketCSV[0].player);
+        } catch (CSVBuilderException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
