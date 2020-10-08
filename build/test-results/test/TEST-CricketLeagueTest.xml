@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CricketLeagueTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-10-08T08:03:35" hostname="DESKTOP-JVE4C36" time="15.61">
+<testsuite name="CricketLeagueTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-10-08T12:40:24" hostname="DESKTOP-JVE4C36" time="25.144">
   <properties/>
-  <testcase name="givingIPLRunsCSVFile_WhenSortOnStrikingRate_ShouldReturnSortedResult" classname="CricketLeagueTest" time="15.61">
+  <testcase name="givingIPLRunsCSVFile_WhenSortOnFours_ShouldReturnSortedResult" classname="CricketLeagueTest" time="25.144">
     <skipped/>
   </testcase>
   <system-out><![CDATA[]]></system-out>
