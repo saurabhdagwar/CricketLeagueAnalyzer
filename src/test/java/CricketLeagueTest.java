@@ -197,8 +197,8 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
             IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
             int numberOfRecord = iplAnalyzer.loadIPLCensusData(MOST_RUNS_CSV,MOST_WICKET_CSV);
             String sortedCensusData = iplAnalyzer.getSortedAverage();
-            RunsCSV[] runsCSVS = new Gson().fromJson(sortedCensusData, RunsCSV[].class);
-            Assert.assertEquals(  "Krishnappa Gowtham", runsCSVS[0].player);
+            WicketCSV[] wicketCSV = new Gson().fromJson(sortedCensusData, WicketCSV[].class);
+            Assert.assertEquals(  "Krishnappa Gowtham", wicketCSV[0].player);
         } catch (CSVBuilderException e) {
             e.printStackTrace();
         }
@@ -210,8 +210,21 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
             IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
             int numberOfRecord = iplAnalyzer.loadIPLCensusData(MOST_RUNS_CSV,MOST_WICKET_CSV);
             String sortedCensusData = iplAnalyzer.getSortOnRunsAndWickets();
+            WicketCSV[] wicketCSV = new Gson().fromJson(sortedCensusData, WicketCSV[].class);
+            Assert.assertEquals(  "Kagiso Rabada", wicketCSV[0].player);
+        } catch (CSVBuilderException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void givingIPLRunsCSVFiles_WhenSortOnHundredsAndAverage_ShouldReturnSortedResult() {
+        try {
+            IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
+            int numberOfRecord = iplAnalyzer.loadIPLRunsCensusData(MOST_RUNS_CSV);
+            String sortedCensusData = iplAnalyzer.getSortOnHundredsAndAverage();
             RunsCSV[] runsCSVS = new Gson().fromJson(sortedCensusData, RunsCSV[].class);
-            Assert.assertEquals(  "Kagiso Rabada", runsCSVS[0].player);
+            Assert.assertEquals(  "David Warner ", runsCSVS[0].player);
         } catch (CSVBuilderException e) {
             e.printStackTrace();
         }
