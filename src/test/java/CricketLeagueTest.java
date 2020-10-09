@@ -221,10 +221,23 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
     public void givingIPLRunsCSVFiles_WhenSortOnHundredsAndAverage_ShouldReturnSortedResult() {
         try {
             IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
-            int numberOfRecord = iplAnalyzer.loadIPLRunsCensusData(MOST_RUNS_CSV);
+            iplAnalyzer.loadIPLRunsCensusData(MOST_RUNS_CSV);
             String sortedCensusData = iplAnalyzer.getSortOnHundredsAndAverage();
             RunsCSV[] runsCSVS = new Gson().fromJson(sortedCensusData, RunsCSV[].class);
             Assert.assertEquals(  "David Warner ", runsCSVS[0].player);
+        } catch (CSVBuilderException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void givingIPLRunsCSVFiles_WhenSortAverageWithout100s50s_ShouldReturnSortedResult() {
+        try {
+            IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
+            iplAnalyzer.loadIPLRunsCensusData(MOST_RUNS_CSV);
+            String sortedCensusData = iplAnalyzer.getSortOnAverageWithout100s50s();
+            RunsCSV[] runsCSVS = new Gson().fromJson(sortedCensusData, RunsCSV[].class);
+            Assert.assertEquals(  "Marcus Stoinis", runsCSVS[0].player);
         } catch (CSVBuilderException e) {
             e.printStackTrace();
         }

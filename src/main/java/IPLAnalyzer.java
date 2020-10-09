@@ -111,7 +111,12 @@ public class IPLAnalyzer {
         this.sortIPLData(censusComparator.thenComparing(census -> census.average));
         String sortedStatedCensusJson = new Gson().toJson(this.iplList);
         return sortedStatedCensusJson;
-
+    }
+    public String getSortOnAverageWithout100s50s() throws CSVBuilderException {
+        Comparator<RunsWicketDAO> censusComparator = Comparator.comparing(census -> ((census.hundred == 0) && (census.fifty == 0)));
+        this.sortIPLData(censusComparator.thenComparing(census -> census.average));
+        String sortedStatedCensusJson = new Gson().toJson(this.iplList);
+        return sortedStatedCensusJson;
     }
 
     private void sortIPLData( Comparator<RunsWicketDAO> csvComparator) throws CSVBuilderException {
@@ -132,7 +137,5 @@ public class IPLAnalyzer {
             }
         }
     }
-
-
 
 }
