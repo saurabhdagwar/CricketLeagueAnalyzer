@@ -37,8 +37,18 @@ public class RunsWicketDAO {
         sr = wicketCSV.sr;
         overs = wicketCSV.overs;
         wickets = wicketCSV.wickets;
+        runs = wicketCSV.runs;
         economy = wicketCSV.economy;
         fourWicket = wicketCSV.fourWicket;
         fiveWicket = wicketCSV.fiveWicket;
+    }
+
+    public RunsWicketDAO(AllRounderCSV allRounderCSV){
+        player = allRounderCSV.player;
+        match = allRounderCSV.match;
+        runs = allRounderCSV.runs;
+        wickets = allRounderCSV.wickets;
+        average = allRounderCSV.average;
+        sr = allRounderCSV.sr;
     }
 }

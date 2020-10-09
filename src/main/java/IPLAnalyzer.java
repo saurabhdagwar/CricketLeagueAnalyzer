@@ -3,7 +3,6 @@ import com.bridgelabz.RunsWicketDAO;
 import com.bridgelabz.WicketCSV;
 import com.csvbuilder.CSVBuilderException;
 import com.google.gson.Gson;
-import org.junit.Assert;
 
 import java.util.*;
 
@@ -96,6 +95,13 @@ public class IPLAnalyzer {
     public String getSortOnWicketsWithAverage() throws CSVBuilderException {
         Comparator<RunsWicketDAO> censusComparator = Comparator.comparing(census -> census.wickets );
         this.sortIPLData(censusComparator.thenComparing(census -> census.sr));
+        String sortedStatedCensusJson = new Gson().toJson(this.iplList);
+        return sortedStatedCensusJson;
+    }
+
+    public String getSortOnRunsAndWickets() throws CSVBuilderException {
+        Comparator<RunsWicketDAO> censusComparator = Comparator.comparing(census -> census.wickets );
+        this.sortIPLData(censusComparator.thenComparing(census -> census.runs));
         String sortedStatedCensusJson = new Gson().toJson(this.iplList);
         return sortedStatedCensusJson;
     }

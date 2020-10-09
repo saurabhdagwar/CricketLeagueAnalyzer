@@ -39,7 +39,6 @@ public class IPLLoader {
         }
     }
 
-
     public Map<String, RunsWicketDAO> loadBothData(String CSVPath1,String CSVPath2) throws CSVBuilderException {
         Map<String, RunsWicketDAO> map1 = loadCensusData( RunsCSV.class,CSVPath1);
         Map<String, RunsWicketDAO> map2 = loadCensusData( WicketCSV.class,CSVPath2);
@@ -47,7 +46,7 @@ public class IPLLoader {
         for(Map.Entry<String, RunsWicketDAO> m1: map1.entrySet()){
             for (Map.Entry<String, RunsWicketDAO> m2: map2.entrySet()){
                 if(m1.getValue().player.equals(m2.getValue().player)){
-                    iplMap.put(m1.getKey(),m1.getValue());
+                    iplMap.put(m2.getKey(),m2.getValue());
                 }
             }
         }

@@ -2,15 +2,13 @@ package com.bridgelabz;
 
 import com.opencsv.bean.CsvBindByName;
 
-public class WicketCSV {
+public class AllRounderCSV {
+
     @CsvBindByName(column = "PLAYER", required = true )
     public String player;
 
     @CsvBindByName(column = "Mat", required = true )
     public int match;
-
-    @CsvBindByName(column = "Ov", required = true )
-    public Double overs;
 
     @CsvBindByName(column = "Runs", required = true )
     public int runs;
@@ -18,38 +16,22 @@ public class WicketCSV {
     @CsvBindByName(column = "Wkts", required = true )
     public int wickets;
 
-    @CsvBindByName(column = "5w", required = true )
-    public int fiveWicket;
-
-    @CsvBindByName(column = "4w", required = true )
-    public int fourWicket;
-
-
     @CsvBindByName(column = "SR", required = true )
     public Double sr;
 
     @CsvBindByName(column = "Avg", required = true )
     public Double average;
 
-    @CsvBindByName(column = "Econ", required = true )
-    public Double economy;
-
     @Override
     public String toString() {
         return "IndiaCensusCSV{" +
                 "PLAYER='" + player + '\'' +
-                ", Average='" + average + '\'' +
-                ", Economy ='" + economy + '\'' +
-                ", Match ='" + match + '\'' +
-                ", Overs ='" + overs + '\'' +
-                ", Runs ='" + runs + '\'' +
-                ", Four Wicket ='" + fourWicket + '\'' +
-                ", Five Wicket  ='" + fiveWicket + '\'' +
+                "Match='" + match + '\'' +
+                ", Total runs='" + runs + '\'' +
                 ", Wickets ='" + wickets + '\'' +
+                ", Average='" + average + '\'' +
                 ", Striking Rates ='" + sr + '\'' +
+
                 '}';
     }
-
-
-
 }
