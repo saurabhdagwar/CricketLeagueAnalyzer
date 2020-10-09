@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CricketLeagueTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2020-10-08T19:37:31" hostname="DESKTOP-JVE4C36" time="2.166">
+<testsuite name="CricketLeagueTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-10-09T03:26:33" hostname="DESKTOP-JVE4C36" time="28.635">
   <properties/>
-  <testcase name="givingIPLRunsCSVFile_WhenSortOnSixesAndFoursSR_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.491"/>
-  <testcase name="givingIPLWicketsCSVFile_WhenSortOnBowlingEconomyRate_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.158"/>
-  <testcase name="givingIPLWicketsCSVFile_WhenSortOnBowlingStrikingRate_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.139"/>
-  <testcase name="givingIPLRunsCSVFile_WhenSortOnSixes_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.185"/>
-  <testcase name="givingIPLRunsCSVFile_WhenSortOnFours_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.156"/>
-  <testcase name="givingIPLRunsCSVFile_WhenSortOnStrikingRate_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.147"/>
-  <testcase name="givingIPLWicketsCSVFile_WhenSortOnBawlingAverage_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.178"/>
-  <testcase name="givingIPLRunsCSVFile_WhenSortRunsWithAverage_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.174"/>
-  <testcase name="givingIPLRunsCSVFile_WhenSortOnBattingAverage_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.157"/>
-  <testcase name="givingIPLRunsCSVFile_WhenSortAverageWithSR_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.127"/>
-  <testcase name="givenIPLRunsCensusCSVFile_ReturnsCorrectRecords" classname="CricketLeagueTest" time="0.124"/>
-  <testcase name="givingIPLWicketsCSVFile_WhenSortOnSRWithWickets_ShouldReturnSortedResult" classname="CricketLeagueTest" time="0.121"/>
+  <testcase name="givingIPLWicketsCSVFile_WhenSortOnAverageWithSR_ShouldReturnSortedResult" classname="CricketLeagueTest" time="28.635">
+    <skipped/>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
