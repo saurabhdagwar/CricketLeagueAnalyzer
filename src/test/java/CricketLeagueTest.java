@@ -190,4 +190,17 @@ public static final String MOST_WICKET_CSV = "./src/test/resources/IPL2019Factsh
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void givingIPLCSVFiles_WhenSortOnBattingAndBowlingAverage_ShouldReturnSortedResult() {
+        try {
+            IPLAnalyzer iplAnalyzer = new IPLAnalyzer();
+            int numberOfRecord = iplAnalyzer.loadIPLCensusData(MOST_RUNS_CSV,MOST_WICKET_CSV);
+            String sortedCensusData = iplAnalyzer.getSortedAverage();
+            RunsCSV[] runsCSVS = new Gson().fromJson(sortedCensusData, RunsCSV[].class);
+            Assert.assertEquals(  "Andre Russell", runsCSVS[0].player);
+        } catch (CSVBuilderException e) {
+            e.printStackTrace();
+        }
+    }
 }

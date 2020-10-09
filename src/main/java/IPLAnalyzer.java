@@ -25,6 +25,12 @@ public class IPLAnalyzer {
         return iplMap.size();
     }
 
+    public int loadIPLCensusData(String CSVPath1,String CSVPath2) throws CSVBuilderException{
+        iplMap = new IPLLoader().loadBothData(CSVPath1,CSVPath2);
+        return iplMap.size();
+    }
+
+
     public String getSortedAverage() throws CSVBuilderException {
         Comparator<RunsWicketDAO> censusComparator = Comparator.comparing(census -> census.average);
         this.sortIPLData(censusComparator);

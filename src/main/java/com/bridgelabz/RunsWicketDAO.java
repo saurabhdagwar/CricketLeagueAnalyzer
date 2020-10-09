@@ -33,10 +33,10 @@ public class RunsWicketDAO {
     public RunsWicketDAO(WicketCSV wicketCSV){
         player = wicketCSV.player;
         match = wicketCSV.match;
+        average = wicketCSV.average;
+        sr = wicketCSV.sr;
         overs = wicketCSV.overs;
         wickets = wicketCSV.wickets;
-        sr = wicketCSV.sr;
-        average = wicketCSV.average;
         economy = wicketCSV.economy;
         fourWicket = wicketCSV.fourWicket;
         fiveWicket = wicketCSV.fiveWicket;
